@@ -9,17 +9,19 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   orientation: "portrait",
   icon: "./assets/icon.png",
 
-  // ✅ ثبّت الوضع الفاتح
   userInterfaceStyle: "light",
-
   newArchEnabled: true,
 
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "sa.drevr.client", // 🔥 هذا أهم سطر
+    bundleIdentifier: "sa.drevr.client",
+    infoPlist: {
+      ITSAppUsesNonExemptEncryption: false, // 🔥 هذا الجديد
+    },
   },
 
   android: {
+    package: "sa.drevr.client",
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
@@ -56,5 +58,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
 
   experiments: {
     typedRoutes: true,
+  },
+
+  extra: {
+    eas: {
+      projectId: "06b19d38-303d-43e1-803f-e3051d8a7353",
+    },
   },
 });
