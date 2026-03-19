@@ -7,7 +7,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   scheme: "drevr",
   version: "1.0.0",
   orientation: "portrait",
-  icon: "./assets/icon.png",
+
+  icon: "./assets/images/icon.png",
 
   userInterfaceStyle: "light",
   newArchEnabled: true,
@@ -16,14 +17,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     supportsTablet: true,
     bundleIdentifier: "sa.drevr.client",
     infoPlist: {
-      ITSAppUsesNonExemptEncryption: false, // 🔥 هذا الجديد
+      ITSAppUsesNonExemptEncryption: false,
     },
   },
 
   android: {
     package: "sa.drevr.client",
     adaptiveIcon: {
-      foregroundImage: "./assets/adaptive-icon.png",
+      foregroundImage: "./assets/images/adaptive-icon.png",
       backgroundColor: "#ffffff",
     },
   },
@@ -31,11 +32,12 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   web: {
     bundler: "metro",
     output: "static",
-    favicon: "./assets/favicon.png",
+    favicon: "./assets/images/favicon.png",
   },
 
   plugins: [
     "expo-router",
+    "expo-asset", // 🔥 هذا الجديد
     "@react-native-community/datetimepicker",
     "expo-font",
     [
@@ -48,7 +50,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     [
       "expo-splash-screen",
       {
-        image: "./assets/splash.png",
+        image: "./assets/images/splash-icon.png",
         imageWidth: 200,
         resizeMode: "contain",
         backgroundColor: "#ffffff",

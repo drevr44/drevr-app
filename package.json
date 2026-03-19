@@ -14,8 +14,8 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "db:push": "drizzle-kit generate && drizzle-kit migrate",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "qr": "node scripts/generate_qr.mjs"
   },
   "dependencies": {
@@ -36,6 +36,7 @@
     "dotenv": "^16.6.1",
     "drizzle-orm": "^0.44.7",
     "expo": "~54.0.29",
+    "expo-asset": "~12.0.12",
     "expo-audio": "~1.1.0",
     "expo-build-properties": "^1.0.10",
     "expo-constants": "~18.0.12",
